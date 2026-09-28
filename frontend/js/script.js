@@ -103,7 +103,10 @@ let students = [
    - Sự kiện và trạng thái đóng tiền là dữ liệu ảo theo từng sự kiện.
    - Dữ liệu chính được đọc từ backend do app của thủ quỹ cập nhật.
 ========================================================= */
-const DEFAULT_API_BASE = window.CLASS_FUND_API_URL || localStorage.getItem("classFundApiUrl") || "";
+const DEFAULT_API_BASE =
+  window.CLASS_FUND_API_URL ||
+  localStorage.getItem("classFundApiUrl") ||
+  "https://quylop.vercel.app";
 const API_POLL_MS = 15000;
 
 const state = {

@@ -31,7 +31,7 @@ let cachedConnection = null;
 async function connectDB() {
   if (!MONGODB_URI) {
     throw new Error(
-      "Chưa cấu hình MONGODB_URI. Hãy tạo file .env hoặc thêm MONGODB_URI trên Vercel."
+      "Chưa cấu hình MONGODB_URI. Hãy thêm MONGODB_URI trên Vercel."
     );
   }
 
@@ -185,6 +185,8 @@ app.get("/", (req, res) => {
     api: {
       students: "/api/students",
       events: "/api/events",
+      health: "/api/health",
+      stats: "/api/stats",
     },
   });
 });
@@ -268,6 +270,7 @@ app.post("/api/students", async (req, res) => {
     await connectDB();
 
     const name = String(req.body.name || "").trim();
+
     const rollNumber = String(
       req.body.rollNumber || ""
     ).trim();
@@ -320,6 +323,12 @@ app.put("/api/students/:id", async (req, res) => {
       update.rollNumber = String(
         req.body.rollNumber
       ).trim();
+    }
+
+    if (update.name === "") {
+      return res.status(400).json({
+        message: "Tên học sinh không được để trống.",
+      });
     }
 
     const student = await Student.findByIdAndUpdate(
@@ -478,7 +487,9 @@ app.post("/api/events", async (req, res) => {
   try {
     await connectDB();
 
-    const name = String(req.body.name || "").trim();
+    const name = String(
+      req.body.name || ""
+    ).trim();
 
     const startDate = normalizeDate(
       req.body.startDate
@@ -857,8 +868,9 @@ app.post(
         });
       }
 
-      const student =
-        await Student.findById(studentId);
+      const student = await Student.findById(
+        studentId
+      );
 
       if (!student) {
         return res.status(404).json({

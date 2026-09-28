@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quản lý Quỹ lớp Kỹ thuật Cơ điện tử K52 - năm học 2026–2027">
+<title>Quỹ lớp Kỹ thuật Cơ điện tử K52</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="logo">₫</div><div><h2>Quỹ lớp Kỹ thuật Cơ điện tử K52</h2><p>Năm học 2026–2027</p></div></div>
+    <p class="menu-title">Tổng quan</p>
+    <nav class="menu" aria-label="Điều hướng chính">
+      <button class="menu-item active" data-page="Dashboard">⌂ <span>Dashboard</span></button>
+      <button class="menu-item" data-page="Khoản thu">◫ <span>Khoản thu</span></button>
+      <button class="menu-item" data-page="Thành viên">◉ <span>Thành viên</span></button>
+      <button class="menu-item" data-page="Giao dịch">↕ <span>Giao dịch</span></button>
+      <button class="menu-item" data-page="Báo cáo">▥ <span>Báo cáo</span></button>
+    </nav>
+    <p class="menu-title">Hệ thống</p>
+    <nav class="menu">
+      <button class="menu-item" data-page="Cài đặt">⚙ <span>Cài đặt</span></button>
+    </nav>
+    <div class="account" id="accountButton" role="button" tabindex="0"><div class="avatar">TN</div><div><strong>Thủ quỹ</strong><small>Nguyễn Thanh Nhàn</small></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Mở menu">☰</button>
+        <div><h1 id="pageHeading">Tổng quan quỹ lớp</h1><p id="pageDate">27 tháng 9, 2026</p></div>
+      </div>
+      <div class="topbar-right">
+        <span class="live" id="apiLiveStatusTop">● Chưa đồng bộ</span>
+        <button class="icon-btn" id="themeToggle" title="Đổi giao diện" aria-label="Đổi giao diện">☾</button>
+        <button class="icon-btn" id="notificationButton" title="Thông báo" aria-label="Thông báo">🔔</button>
+      </div>
+    </header>
+    <section class="content" id="content"></section>
+  </main>
+</div>
+
+<div id="notificationPanel" class="notification-panel" hidden>
+  <h3>Thông báo</h3>
+  <div class="notification-item"><b>Đang chờ dữ liệu</b><small>Web sẽ hiển thị các sự kiện sau khi app thủ quỹ tạo chúng.</small></div>
+</div>
+
+<div id="modalRoot"></div>
+<script src="./js/script.js"></script>
+</body>
+</html>

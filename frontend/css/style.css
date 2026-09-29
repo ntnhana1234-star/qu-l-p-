@@ -887,7 +887,21 @@ body.mobile-mode .transaction-time { display: none; }
     text-align: left;
     flex-shrink: 0;
   }
-  .student { min-width: 0; }
+  .student { min-width: 0; justify-content: flex-start; text-align: left; }
+
+  /* Ô học sinh (cột đầu) và ô không có data-label: canh trái, không tạo ::before rỗng */
+  .table-wrap td:first-child,
+  .table-wrap td:not([data-label]) {
+    display: block;
+    text-align: left;
+  }
+  .table-wrap td:first-child::before,
+  .table-wrap td:not([data-label])::before { display: none; }
+  .table-wrap td:first-child {
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
 
   /* Sự kiện / thanh toán */
   .payment-event { grid-template-columns: 40px 1fr; padding: 14px; }

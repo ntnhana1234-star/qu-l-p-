@@ -94,7 +94,10 @@ let students = [
   { "id": 80, "code": "B2608163", "name": "VÕ TRUNG VIỆT" },
   { "id": 81, "code": "B2608164", "name": "LÊ QUANG VINH" },
   { "id": 82, "code": "B2608165", "name": "NGUYỄN CHÍ VỈNH" },
-  { "id": 83, "code": "B2608166", "name": "LƯU CHÍ VỸ" }
+  { "id": 83, "code": "B2608166", "name": "LƯU CHÍ VỸ" },
+  { "id": 84, "code": "B2608093", "name": "KIỀU QUỐC ĐẠI" },
+  { "id": 85, "code": "B2608167", "name": "NGUYỄN CHÍ VỸ" },
+  { "id": 86, "code": "B2608099", "name": "LÝ HÀO" }
 ];
 
 /* =========================================================
